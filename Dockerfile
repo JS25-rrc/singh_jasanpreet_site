@@ -1,6 +1,6 @@
 FROM node:25-alpine
 
-WORKDIR /lastName_firstName_site
+WORKDIR /singh_jasanpreet_site
 
 COPY package*.json ./
 
