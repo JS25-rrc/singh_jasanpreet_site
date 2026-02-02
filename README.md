@@ -4,8 +4,8 @@ This project sets up a containerized development environment using Docker, Vite,
 ## Requirements Met
 - Development environment using Docker containers
 - Displays `<h1>Codin 1</h1>` using Vite + React
-- Container named "lastName_firstName_coding_assignment11"
-- Working directory named "lastName_firstName_site"
+- Container named "singh_jasanpreet_coding_assignment1"
+- Working directory named "singh_jasanpreet_site"
 - Runs on localhost:7775
 
 ## Tech Stack
@@ -27,8 +27,6 @@ npm create vite@latest singh_jasanpreet_site
 cd singh_jasanpreet_site
 npm install
 ```
-
-Replace `lastName_firstName` with your actual name.
 
 ### Configure Vite
 Update `vite.config.ts`:
@@ -98,7 +96,7 @@ docker build -t singh_jasanpreet_coding_assignment11 .
 
 Run the container:
 ```bash
-docker run -p 7775:7775 --name singh_jasanpreet_coding_assignment11 singh_jasanpreet_coding_assignment11
+docker run --name singh_jasanpreet_coding_assignment11 -p 7775:7775 singh_jasanpreet_coding_assignment11
 ```
 
 Access the app at http://localhost:7775
@@ -130,34 +128,3 @@ View running containers:
 docker ps
 
 ```
-
-## Troubleshooting
-
-**Port already in use:**
-Check what's using port 7775 and stop it, or use a different port mapping.
-
-**Container name exists:**
-Remove the existing container first with `docker rm`.
-
-**Changes not showing:**
-The container uses polling for hot reload. Try a hard refresh in your browser.
-
-**Need to rebuild:**
-```bash
-docker stop singh_jasanpreet_coding_assignment11
-docker rm lastName_firstName_coding_assignment11
-docker build -t lsingh_jasanpreet_coding_assignment11 .
-docker run -p 7775:7775 --name lastName_firstName_coding_assignment11 lastName_firstName_coding_assignment11
-```
-
-## Notes
-- Using Node v25.3.0 to match local development environment
-- Vite provides hot module replacement for faster development
-- Alpine Linux keeps the Docker image small
-
-## Submission
-Repository includes:
-- Dockerfile
-- README.md
-- vite.config.ts
-- Source files
