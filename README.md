@@ -91,12 +91,12 @@ dist
 
 Build the image:
 ```bash
-docker build -t singh_jasanpreet_coding_assignment11 .
+docker build -t singh_jasanpreet_coding_assignment1 .
 ```
 
 Run the container:
 ```bash
-docker run --name singh_jasanpreet_coding_assignment11 -p 7775:7775 singh_jasanpreet_coding_assignment11
+docker run --name singh_jasanpreet_coding_assignment1 -p 7775:7775 singh_jasanpreet_coding_assignment1
 ```
 
 Access the app at http://localhost:7775
@@ -105,22 +105,22 @@ Access the app at http://localhost:7775
 
 Stop container:
 ```bash
-docker stop singh_jasanpreet_coding_assignment11
+docker stop singh_jasanpreet_coding_assignment1
 ```
 
 Start container:
 ```bash
-docker start singh_jasanpreet_coding_assignment11
+docker start singh_jasanpreet_coding_assignment1
 ```
 
 Remove container:
 ```bash
-docker rm singh_jasanpreet_coding_assignment11
+docker rm singh_jasanpreet_coding_assignment1
 ```
 
 View logs:
 ```bash
-docker logs singh_jasanpreet_coding_assignment11
+docker logs singh_jasanpreet_coding_assignment1
 ```
 
 View running containers:
