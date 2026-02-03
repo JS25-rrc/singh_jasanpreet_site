@@ -4,8 +4,8 @@ This project sets up a containerized development environment using Docker, Vite,
 ## Requirements Met
 - Development environment using Docker containers
 - Displays `<h1>Codin 1</h1>` using Vite + React
-- Container named "lastName_firstName_coding_assignment11"
-- Working directory named "lastName_firstName_site"
+- Container named "singh_jasanpreet_coding_assignment1"
+- Working directory named "singh_jasanpreet_site"
 - Runs on localhost:7775
 
 ## Tech Stack
@@ -23,12 +23,10 @@ This project sets up a containerized development environment using Docker, Vite,
 
 ### Create the Vite Project
 ```bash
-npm create vite@latest lastName_firstName_site -- --template react-ts
-cd lastName_firstName_site
+npm create vite@latest singh_jasanpreet_site
+cd singh_jasanpreet_site
 npm install
 ```
-
-Replace `lastName_firstName` with your actual name.
 
 ### Configure Vite
 Update `vite.config.ts`:
@@ -72,7 +70,7 @@ Create `Dockerfile`:
 
 ```dockerfile
 FROM node:25-alpine
-WORKDIR /lastName_firstName_site
+WORKDIR /singh_jasanpreet_site
 COPY package*.json ./
 RUN npm install
 COPY . .
@@ -93,12 +91,12 @@ dist
 
 Build the image:
 ```bash
-docker build -t lastName_firstName_coding_assignment11 .
+docker build -t singh_jasanpreet_coding_assignment1 .
 ```
 
 Run the container:
 ```bash
-docker run -p 7775:7775 --name lastName_firstName_coding_assignment11 lastName_firstName_coding_assignment11
+docker run --name singh_jasanpreet_coding_assignment1 -p 7775:7775 singh_jasanpreet_coding_assignment1
 ```
 
 Access the app at http://localhost:7775
@@ -107,56 +105,26 @@ Access the app at http://localhost:7775
 
 Stop container:
 ```bash
-docker stop lastName_firstName_coding_assignment11
+docker stop singh_jasanpreet_coding_assignment1
 ```
 
 Start container:
 ```bash
-docker start lastName_firstName_coding_assignment11
+docker start singh_jasanpreet_coding_assignment1
 ```
 
 Remove container:
 ```bash
-docker rm lastName_firstName_coding_assignment11
+docker rm singh_jasanpreet_coding_assignment1
 ```
 
 View logs:
 ```bash
-docker logs lastName_firstName_coding_assignment11
+docker logs singh_jasanpreet_coding_assignment1
 ```
 
 View running containers:
-```bash
+```bash`  
 docker ps
+
 ```
-
-## Troubleshooting
-
-**Port already in use:**
-Check what's using port 7775 and stop it, or use a different port mapping.
-
-**Container name exists:**
-Remove the existing container first with `docker rm`.
-
-**Changes not showing:**
-The container uses polling for hot reload. Try a hard refresh in your browser.
-
-**Need to rebuild:**
-```bash
-docker stop lastName_firstName_coding_assignment11
-docker rm lastName_firstName_coding_assignment11
-docker build -t lastName_firstName_coding_assignment11 .
-docker run -p 7775:7775 --name lastName_firstName_coding_assignment11 lastName_firstName_coding_assignment11
-```
-
-## Notes
-- Using Node v25.3.0 to match local development environment
-- Vite provides hot module replacement for faster development
-- Alpine Linux keeps the Docker image small
-
-## Submission
-Repository includes:
-- Dockerfile
-- README.md
-- vite.config.ts
-- Source files
